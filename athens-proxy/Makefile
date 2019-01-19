@@ -1,5 +1,5 @@
 GIT_REPO=https://github.com/gomods/athens.git
-SOURCE_DIR=athens-source
+SOURCE_DIR=.athens-source
 ATHENS_VERSION=$(shell cat ../VERSION)
 ATHENS_CHART_DIR=${SOURCE_DIR}/
 CHART_REPO := http://jenkins-x-chartmuseum:8080
