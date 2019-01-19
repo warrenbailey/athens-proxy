@@ -35,7 +35,6 @@ clean:
 
 release: clean build
 	sed -i -e "s/version:.*/version: $(shell cat ./VERSION)/" Chart.yaml
-	sed -i -e "s/tag:.*/tag: $(shell cat ./VERSION)/" values.yaml
 	helm package .
 	curl --fail -u $(CHARTMUSEUM_CREDS_USR):$(CHARTMUSEUM_CREDS_PSW) --data-binary "@$(NAME)-$(shell cat ./VERSION).tgz" $(CHART_REPO)/api/charts
 
