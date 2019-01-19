@@ -1,0 +1,6 @@
+values.yaml
+templates
+Chart.yaml
+athens-proxy/athens-source
+athens-proxy/VERSION
+athens-proxy/*.tgz
