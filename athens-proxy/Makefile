@@ -10,7 +10,7 @@ OS := $(shell uname)
 init: 
 	helm init --client-only
 
-setup: init init_submodule init_version
+setup: init init_submodule
 	helm repo add jenkinsxio https://chartmuseum.jx.cd.jenkins-x.io 
 
 build: clean setup
@@ -42,8 +42,4 @@ init_submodule:
 	@echo "Getting Athens ${ATHENS_VERSION} from ${GIT_REPO}"
 	git clone --branch ${ATHENS_VERSION} ${GIT_REPO} ${SOURCE_DIR} 2>/dev/null; true
 	cp -r ${SOURCE_DIR}/charts/proxy/* .
-
-init_version:
-	git tag ${ATHENS_VERSION} 2> /dev/null; true
-	echo $(shell jx-release-version) > ./VERSION
 	
