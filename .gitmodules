@@ -1,0 +1,3 @@
+[submodule "athens-source"]
+	path = athens-source
+	url = https://github.com/gomods/athens.git
