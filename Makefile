@@ -14,7 +14,7 @@ init:
 	helm init --client-only
 
 setup: init init_submodule
-	helm repo add jenkinsxio http://chartmuseum.jenkins-x.io
+	helm repo add jenkinsxio https://storage.googleapis.com/chartmuseum.jenkins-x.io
 
 build: clean setup
 	helm dependency build athens-proxy
